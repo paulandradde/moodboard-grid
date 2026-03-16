@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Moodboard - Grid</title>
+        <link rel="stylesheet" href="CSS/style.css" />
+    </head>
+    <body>
+        <header class="site-header">
+            <h1 class="sr-only">Moodboard personal</h1>
+        </header>
+        <main class="moodboard" aria-label="Moodboard personal">
+            <!-- IDENTITY (tarjeta grande izquierda arriba) -->
+            <section class="card identity" aria-labelledby="identity-title">
+                <p class="kicker">IDENTITY</p>
+                <h2 id="identity-title">Siempre aprendiendo, analizando y construyendo algo nuevo.</h2>
+                <p class="muted">
+                    Me interesan la programación y la ciberseguridad, y disfruto analizando cómo funcionan los sistemas para mejorarlos.
+                </p>
+            </section>
+            <!-- Imagen superior derecha -->
+            <section class="card hero" aria-label="Imagen destacada">
+                <img src="img/candado.jpg" alt="Candado ciberseguridad" />
+            </section>
+            <!-- PORTFOLIO (caja oscura “Proxectos Persoais”) -->
+            <section class="card portfolio" aria-labelledby="portfolio-title">
+                <p class="kicker">PORTFOLIO</p>
+                <h2 id="portfolio-title">Proyectos Personales</h2>
+            </section>
+            <!-- Proyectos (dos columnas dentro) -->
+            <section class="card projects" aria-label="Proyectos">
+                <article class="project">
+                    <h3>Página Web</h3>
+                    <p class="muted">HTML + CSS + Javascript.</p>
+                    <a class="btn" href="https://github.com/AlejandroCarreira/Dise-o-buceo" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </article>
+                <article class="project">
+                    <h3>Práctica BBDD</h3>
+                    <p class="muted">Consultas SQL.</p>
+                    <a class="btn" href="https://github.com/paulandradde/bbdd1" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </article>
+            </section>
+            <!-- VISION (tarjeta azul abajo izquierda) -->
+            <section class="card vision" aria-labelledby="vision-title">
+                <p class="kicker">VISION</p>
+                <h2 id="vision-title">Tecnología con lógica y propósito.</h2>
+            </section>
+            <!-- Imagen inferior central -->
+            <section class="card photo" aria-label="Imagen de ciudad">
+                <img src="img/buceo.jpg" alt="Buceo submarino con tortugas." />
+            </section>
+            <!-- HOBBIES (tarjeta derecha abajo) -->
+            <section class="card hobbies" aria-labelledby="hobbies-title">
+                <p class="kicker">HOBBIES</p>
+                <h2 id="hobbies-title" class="sr-only">Aficiones</h2>
+                <ul>
+                    <li>🤿 Scuba Diving</li>
+                    <li>🎮 Gaming</li>
+                    <li>🏋🏼‍♀️ Gym</li>
+                </ul>
+            </section>
+        </main>
+    <footer class="site-footer">
+        <small>© 2026 · Paula Andrade López</small>
+    </footer>
+    </body>
+</html>

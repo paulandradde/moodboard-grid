@@ -1,0 +1,254 @@
+/* Variables CSS (colores, radios y sombras) */
+:root {
+    --bg: #f3f5f9;
+    --card: #ffffff;
+    --text: #0f172a;
+    --muted: #5b6475;
+    --accent: #44adfe;
+    --dark: #0b1224;
+    --radius: 18px;
+    --shadow: 0 10px 25px rgba(15, 23, 42, 0.10);
+}
+
+/* Reset básico + box-sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo base del body */
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.4;
+}
+
+/* Clase de accesibilidad para ocultar visualmente (mantener para lectores) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* Header simple (opcional) */
+.site-header {
+    padding: 24px 16px 0;
+}
+
+/* Footer simple */
+.site-footer {
+    padding: 18px 16px 28px;
+    text-align: center;
+    color: var(--muted);
+}
+
+/* Contenedor principal con GRID (layout “modelo”) */
+.moodboard {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+    padding: 24px 0 12px;
+
+    display: grid;
+    gap: 18px;
+
+    grid-template-columns: 1.4fr 1fr 0.9fr;
+    grid-template-rows: 190px 180px 160px;
+    grid-template-areas:
+    "identity identity hero"
+    "portfolio projects projects"
+    "vision photo hobbies";
+}
+
+/* Estilo base común de tarjetas */
+.card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 22px;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+/* Hover para dar foco a tarjetas */
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.14);
+}
+
+/* Texto pequeño tipo etiqueta */
+.kicker {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+/* Texto secundario */
+.muted {
+    color: var(--muted);
+}
+
+/* IDENTIDAD: ubicación en grid */
+.identity {
+    grid-area: identity;
+}
+
+/* Títulos generales */
+.identity h2,
+.portfolio h2,
+.vision h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* HERO: imagen superior derecha */
+.hero {
+    grid-area: hero;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Anidamiento 1: imágenes dentro de .card (encaje + recorte) */
+.card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* PORTFOLIO oscuro */
+.portfolio {
+    grid-area: portfolio;
+    background: var(--dark);
+    color: white;
+}
+
+/* Ajuste de kicker en tarjeta oscura */
+.portfolio .kicker {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* PROJECTS: contenedor con grid interno (2 columnas) */
+.projects {
+    grid-area: projects;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+/* Anidamiento 2: cada .project dentro de .projects */
+.projects .project {
+    padding: 6px 6px 0;
+}
+
+/* Título de cada proyecto */
+.projects .project h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+/* Botón/enlace con estilo */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: var(--accent);
+    color: #00324a;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 180ms ease, filter 180ms ease;
+}
+
+/* Hover en enlaces/botones (requisito de foco) */
+.btn:hover {
+    transform: scale(1.03);
+    filter: brightness(1.03);
+}
+
+/* VISION: tarjeta azul */
+.vision {
+    grid-area: vision;
+    background: var(--accent);
+    color: #00324a;
+}
+
+/* Ajuste de kicker en tarjeta azul */
+.vision .kicker {
+    color: rgba(0, 50, 74, 0.75);
+}
+
+/* PHOTO: imagen inferior central */
+.photo {
+    grid-area: photo;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* HOBBIES: lista a la derecha */
+.hobbies {
+    grid-area: hobbies;
+}
+
+/* Estilo lista hobbies */
+.hobbies ul {
+    list-style: none;
+    margin-top: 10px;
+    display: grid;
+    gap: 10px;
+}
+
+/* Separador visual dentro de hobbies */
+.hobbies li {
+    padding-left: 10px;
+    border-left: 3px solid rgba(45, 183, 255, 0.6);
+}
+
+/* Media Query: tablets (layout en 2 columnas) */
+@media (max-width: 1024px) {
+  /* Reorganización del grid para pantallas medianas */
+    .moodboard {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "identity hero"
+        "portfolio portfolio"
+        "projects projects"
+        "vision hobbies"
+        "photo photo";
+    }
+
+  /* Ajuste de títulos en pantallas medianas */
+    .identity h2,
+    .portfolio h2,
+    .vision h2 {
+    font-size: 24px;
+    }
+}
+
+/* Media Query: móviles (1 columna) */
+@media (max-width: 576px) {
+  /* Grid en una columna */
+    .moodboard {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "identity"
+        "hero"
+        "portfolio"
+        "projects"
+        "vision"
+        "photo"
+        "hobbies";
+    }
+
+  /* Projects en una columna */
+    .projects {
+    grid-template-columns: 1fr;
+    }
+}
